@@ -38,14 +38,25 @@ class App extends Component {
     this.setState( { todos: [...this.state.todos.filter(todo => todo.id !== id)]})
   }
 
+  addTodo = (title) => {
+    const newTodo = {
+      id: 4,
+      title,
+      completed: false
+    }
+    this.setState({ todos: [...this.state.todos, newTodo] })
+  }
+
   render() {
     return (
       <div className="App">
-        <Header />
-        <AddTodo />
-        <TodosList todosList={this.state.todos}
-        toggleComplete={this.toggleComplete} 
-        delTodo={this.delTodo} />
+        <div className="container">
+          <Header />
+          <AddTodo addTodo={this.addTodo}/>
+          <TodosList todosList={this.state.todos}
+          toggleComplete={this.toggleComplete} 
+          delTodo={this.delTodo} />
+        </div>
       </div>
     );
   }
