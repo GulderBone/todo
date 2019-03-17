@@ -3,26 +3,16 @@ import Header from './components/layout/Header';
 import TodosList from './components/TodosList';
 import AddTodo from './components/AddTodo';
 import './App.css';
+import axios from 'axios';
 
 class App extends Component {
   state = {
-    todos: [
-      {
-        id: 1,
-        title: 'Take out the trash',
-        completed: false
-      },
-      {
-        id: 2,
-        title: 'Dinner with wife',
-        completed: false
-      },
-      {
-        id: 3,
-        title: 'Meeting with boss',
-        completed: false
-      }
-    ]
+    todos: []
+  }
+
+  componentDidMount() {
+    axios.get('http://localhost:8080/items')
+      .then(res => console.log(res.data));
   }
 
   toggleComplete = (id) => {
