@@ -12,7 +12,7 @@ class App extends Component {
 
   componentDidMount() {
     axios.get('http://localhost:8080/items')
-      .then(res => console.log(res.data));
+      .then(res => this.setState({ todos: res.data}));
   }
 
   toggleComplete = (id) => {
