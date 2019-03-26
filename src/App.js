@@ -4,6 +4,7 @@ import Header from './components/layout/Header';
 import TodosList from './components/TodosList';
 import AddTodo from './components/AddTodo';
 import About from './components/pages/About';
+import Login from './components/pages/Login';
 import './App.css';
 import axios from 'axios';
 
@@ -45,6 +46,7 @@ class App extends Component {
         <div className="App">
           <div className="container">
             <Header />
+            <Route path="/login" component={Login} />
             <Route exact path="/" render={props => (
               <React.Fragment>
                 <AddTodo addTodo={this.addTodo}/>
