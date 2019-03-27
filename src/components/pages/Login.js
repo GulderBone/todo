@@ -15,7 +15,7 @@ class Login extends Component {
     return (
         <div style={loginStyle} className="Login">
         <form style={formStyle} onSubmit={this.handleSubmit}>
-          <FormGroup controlId="email" bsSize="large">
+          <FormGroup controlId="email">
             <FormControl
               autoFocus
               type="email"
@@ -23,7 +23,7 @@ class Login extends Component {
               onChange={this.handleChange}
             />
           </FormGroup>
-          <FormGroup controlId="password" bsSize="large">
+          <FormGroup controlId="password">
             <FormControl
               value={this.state.password}
               onChange={this.handleChange}
@@ -32,7 +32,6 @@ class Login extends Component {
           </FormGroup>
           <Button
             block
-            bsSize="large"
             disabled={!this.validateForm()}
             type="submit"
           >
